@@ -59,10 +59,12 @@ export class App extends Component {
         </Section>
         <Section title="Contacts">
           <Filter onChange={this.filterContacts} />
-          <ContactList
-            contacts={filteredContacts}
-            deleteContact={this.deleteContact}
-          />
+          {contacts.length > 0 && (
+            <ContactList
+              contacts={filteredContacts}
+              deleteContact={this.deleteContact}
+            />
+          )}
         </Section>
       </>
     );
